@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version      = "0.2"
   s.summary      = "A very simple to use picture browser.."
   s.homepage     = "https://github.com/EnjoySR/ESPictureBrowser"
-  s.license = { :type => 'MIT', :file => 'LICENSE.md' }
+  s.license = { :type => 'MIT'}
   s.author             = { "EnjoySR" => "yinqiaoyin@gmail.com" }
   s.social_media_url   = "http://weibo.com/EnjoySR"
   s.platform     = :ios, "8.0"
