@@ -7,110 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F204B4B1DB279CF008DC764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B4A1DB279CF008DC764 /* AppDelegate.swift */; };
-		4F204B4D1DB279CF008DC764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B4C1DB279CF008DC764 /* ViewController.swift */; };
-		4F204B501DB279CF008DC764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F204B4E1DB279CF008DC764 /* Main.storyboard */; };
-		4F204B521DB279CF008DC764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F204B511DB279CF008DC764 /* Assets.xcassets */; };
-		4F204B551DB279CF008DC764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F204B531DB279CF008DC764 /* LaunchScreen.storyboard */; };
-		4F204B5D1DB279DF008DC764 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F204B5C1DB279DF008DC764 /* list.json */; };
-		4F204B641DB27A31008DC764 /* ESPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B631DB27A31008DC764 /* ESPictureModel.swift */; };
-		4F204B661DB27B15008DC764 /* ESCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B651DB27B15008DC764 /* ESCellNode.swift */; };
-		4F204B681DB27EA3008DC764 /* ESCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B671DB27EA3008DC764 /* ESCellLayout.swift */; };
-		4F204B991DB31CBF008DC764 /* ESPictureBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B971DB31CBF008DC764 /* ESPictureBrowser.swift */; };
-		4F204B9A1DB31CBF008DC764 /* ESPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F204B981DB31CBF008DC764 /* ESPictureView.swift */; };
-		D016C2D6820E0E241756D948 /* Pods_ESPictureBrowserDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97B15615492914F715268F4 /* Pods_ESPictureBrowserDemo.framework */; };
+		4F204C081DB32D1A008DC764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F204C071DB32D1A008DC764 /* main.m */; };
+		4F204C0B1DB32D1A008DC764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F204C0A1DB32D1A008DC764 /* AppDelegate.m */; };
+		4F204C0E1DB32D1A008DC764 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F204C0D1DB32D1A008DC764 /* ViewController.m */; };
+		4F204C111DB32D1A008DC764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F204C0F1DB32D1A008DC764 /* Main.storyboard */; };
+		4F204C131DB32D1A008DC764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F204C121DB32D1A008DC764 /* Assets.xcassets */; };
+		4F204C161DB32D1A008DC764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F204C141DB32D1A008DC764 /* LaunchScreen.storyboard */; };
+		4F204C1E1DB32DFD008DC764 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F204C1D1DB32DFD008DC764 /* list.json */; };
+		4F39BF351DB32EE9004362CF /* ESPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF341DB32EE9004362CF /* ESPictureModel.m */; };
+		4F39BF381DB330BA004362CF /* ESCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF371DB330B9004362CF /* ESCellNode.m */; };
+		4F39BF3B1DB332A0004362CF /* ESCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF3A1DB332A0004362CF /* ESCellLayout.m */; };
+		4F39BF3F1DB36E07004362CF /* ESPictureBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */; };
+		4F39BF421DB36E52004362CF /* ESPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF411DB36E52004362CF /* ESPictureView.m */; };
+		9EAFA92710C6273E0F311114 /* libPods-ESPictureBrowserDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68C6288AF9166C306A094F7 /* libPods-ESPictureBrowserDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18061028A60BB1F53F30E80B /* Pods-ESPictureBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
-		24F68CFA11D7D952C3397D53 /* Pods-ESPictureBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		4F204B471DB279CF008DC764 /* ESPictureBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESPictureBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F204B4A1DB279CF008DC764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F204B4C1DB279CF008DC764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4F204B4F1DB279CF008DC764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4F204B511DB279CF008DC764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F204B541DB279CF008DC764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4F204B561DB279CF008DC764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F204B5C1DB279DF008DC764 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
-		4F204B631DB27A31008DC764 /* ESPictureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPictureModel.swift; sourceTree = "<group>"; };
-		4F204B651DB27B15008DC764 /* ESCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESCellNode.swift; sourceTree = "<group>"; };
-		4F204B671DB27EA3008DC764 /* ESCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESCellLayout.swift; sourceTree = "<group>"; };
-		4F204B971DB31CBF008DC764 /* ESPictureBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPictureBrowser.swift; sourceTree = "<group>"; };
-		4F204B981DB31CBF008DC764 /* ESPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPictureView.swift; sourceTree = "<group>"; };
-		E97B15615492914F715268F4 /* Pods_ESPictureBrowserDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESPictureBrowserDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F204C031DB32D1A008DC764 /* ESPictureBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESPictureBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F204C071DB32D1A008DC764 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F204C091DB32D1A008DC764 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F204C0A1DB32D1A008DC764 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F204C0C1DB32D1A008DC764 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4F204C0D1DB32D1A008DC764 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4F204C101DB32D1A008DC764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F204C121DB32D1A008DC764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F204C151DB32D1A008DC764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F204C171DB32D1A008DC764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F204C1D1DB32DFD008DC764 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		4F39BF331DB32EE9004362CF /* ESPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureModel.h; sourceTree = "<group>"; };
+		4F39BF341DB32EE9004362CF /* ESPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureModel.m; sourceTree = "<group>"; };
+		4F39BF361DB330B9004362CF /* ESCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCellNode.h; sourceTree = "<group>"; };
+		4F39BF371DB330B9004362CF /* ESCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCellNode.m; sourceTree = "<group>"; };
+		4F39BF391DB332A0004362CF /* ESCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCellLayout.h; sourceTree = "<group>"; };
+		4F39BF3A1DB332A0004362CF /* ESCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCellLayout.m; sourceTree = "<group>"; };
+		4F39BF3D1DB36E07004362CF /* ESPictureBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureBrowser.h; sourceTree = "<group>"; };
+		4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureBrowser.m; sourceTree = "<group>"; };
+		4F39BF401DB36E52004362CF /* ESPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureView.h; sourceTree = "<group>"; };
+		4F39BF411DB36E52004362CF /* ESPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureView.m; sourceTree = "<group>"; };
+		800A2B6F20A0A875DDA59145 /* Pods-ESPictureBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B68C6288AF9166C306A094F7 /* libPods-ESPictureBrowserDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESPictureBrowserDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD20E75C06E5CEFC879DDBB1 /* Pods-ESPictureBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4F204B441DB279CF008DC764 /* Frameworks */ = {
+		4F204C001DB32D1A008DC764 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D016C2D6820E0E241756D948 /* Pods_ESPictureBrowserDemo.framework in Frameworks */,
+				9EAFA92710C6273E0F311114 /* libPods-ESPictureBrowserDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0572D1F830E4042B7662AF47 /* Frameworks */ = {
+		4F204BFA1DB32D1A008DC764 = {
 			isa = PBXGroup;
 			children = (
-				E97B15615492914F715268F4 /* Pods_ESPictureBrowserDemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4F204B3E1DB279CF008DC764 = {
-			isa = PBXGroup;
-			children = (
-				4F204B491DB279CF008DC764 /* ESPictureBrowserDemo */,
-				4F204B481DB279CF008DC764 /* Products */,
-				CF71533421655D706BAC2A61 /* Pods */,
-				0572D1F830E4042B7662AF47 /* Frameworks */,
+				4F204C051DB32D1A008DC764 /* ESPictureBrowserDemo */,
+				4F204C041DB32D1A008DC764 /* Products */,
+				AC585C8BABE46E09483FD52D /* Pods */,
+				AC4D5F172DD5CE6F714C9549 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		4F204B481DB279CF008DC764 /* Products */ = {
+		4F204C041DB32D1A008DC764 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F204B471DB279CF008DC764 /* ESPictureBrowserDemo.app */,
+				4F204C031DB32D1A008DC764 /* ESPictureBrowserDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4F204B491DB279CF008DC764 /* ESPictureBrowserDemo */ = {
+		4F204C051DB32D1A008DC764 /* ESPictureBrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4F204B961DB31CBF008DC764 /* ESPictureBrowser */,
-				4F204B4A1DB279CF008DC764 /* AppDelegate.swift */,
-				4F204B4C1DB279CF008DC764 /* ViewController.swift */,
-				4F204B631DB27A31008DC764 /* ESPictureModel.swift */,
-				4F204B651DB27B15008DC764 /* ESCellNode.swift */,
-				4F204B671DB27EA3008DC764 /* ESCellLayout.swift */,
-				4F204B5C1DB279DF008DC764 /* list.json */,
-				4F204B4E1DB279CF008DC764 /* Main.storyboard */,
-				4F204B511DB279CF008DC764 /* Assets.xcassets */,
-				4F204B531DB279CF008DC764 /* LaunchScreen.storyboard */,
-				4F204B561DB279CF008DC764 /* Info.plist */,
+				4F39BF3C1DB36DE3004362CF /* ESPictureBrowser */,
+				4F204C091DB32D1A008DC764 /* AppDelegate.h */,
+				4F204C0A1DB32D1A008DC764 /* AppDelegate.m */,
+				4F204C0C1DB32D1A008DC764 /* ViewController.h */,
+				4F204C0D1DB32D1A008DC764 /* ViewController.m */,
+				4F39BF331DB32EE9004362CF /* ESPictureModel.h */,
+				4F39BF341DB32EE9004362CF /* ESPictureModel.m */,
+				4F39BF361DB330B9004362CF /* ESCellNode.h */,
+				4F39BF371DB330B9004362CF /* ESCellNode.m */,
+				4F39BF391DB332A0004362CF /* ESCellLayout.h */,
+				4F39BF3A1DB332A0004362CF /* ESCellLayout.m */,
+				4F204C0F1DB32D1A008DC764 /* Main.storyboard */,
+				4F204C121DB32D1A008DC764 /* Assets.xcassets */,
+				4F204C141DB32D1A008DC764 /* LaunchScreen.storyboard */,
+				4F204C171DB32D1A008DC764 /* Info.plist */,
+				4F204C1D1DB32DFD008DC764 /* list.json */,
+				4F204C061DB32D1A008DC764 /* Supporting Files */,
 			);
 			path = ESPictureBrowserDemo;
 			sourceTree = "<group>";
 		};
-		4F204B961DB31CBF008DC764 /* ESPictureBrowser */ = {
+		4F204C061DB32D1A008DC764 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4F204B971DB31CBF008DC764 /* ESPictureBrowser.swift */,
-				4F204B981DB31CBF008DC764 /* ESPictureView.swift */,
+				4F204C071DB32D1A008DC764 /* main.m */,
 			);
-			name = ESPictureBrowser;
-			path = ../../ESPictureBrowser;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CF71533421655D706BAC2A61 /* Pods */ = {
+		4F39BF3C1DB36DE3004362CF /* ESPictureBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				24F68CFA11D7D952C3397D53 /* Pods-ESPictureBrowserDemo.debug.xcconfig */,
-				18061028A60BB1F53F30E80B /* Pods-ESPictureBrowserDemo.release.xcconfig */,
+				4F39BF3D1DB36E07004362CF /* ESPictureBrowser.h */,
+				4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */,
+				4F39BF401DB36E52004362CF /* ESPictureView.h */,
+				4F39BF411DB36E52004362CF /* ESPictureView.m */,
+			);
+			path = ESPictureBrowser;
+			sourceTree = "<group>";
+		};
+		AC4D5F172DD5CE6F714C9549 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B68C6288AF9166C306A094F7 /* libPods-ESPictureBrowserDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC585C8BABE46E09483FD52D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				800A2B6F20A0A875DDA59145 /* Pods-ESPictureBrowserDemo.debug.xcconfig */,
+				CD20E75C06E5CEFC879DDBB1 /* Pods-ESPictureBrowserDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -118,16 +142,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F204B461DB279CF008DC764 /* ESPictureBrowserDemo */ = {
+		4F204C021DB32D1A008DC764 /* ESPictureBrowserDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F204B591DB279CF008DC764 /* Build configuration list for PBXNativeTarget "ESPictureBrowserDemo" */;
+			buildConfigurationList = 4F204C1A1DB32D1A008DC764 /* Build configuration list for PBXNativeTarget "ESPictureBrowserDemo" */;
 			buildPhases = (
-				B976DBB309B53B7CD4201D88 /* [CP] Check Pods Manifest.lock */,
-				4F204B431DB279CF008DC764 /* Sources */,
-				4F204B441DB279CF008DC764 /* Frameworks */,
-				4F204B451DB279CF008DC764 /* Resources */,
-				280971184531545BBBBB2652 /* [CP] Embed Pods Frameworks */,
-				2977DC1A913107FFF12731D7 /* [CP] Copy Pods Resources */,
+				6CE26BA2BF99BAB24104A5E7 /* [CP] Check Pods Manifest.lock */,
+				4F204BFF1DB32D1A008DC764 /* Sources */,
+				4F204C001DB32D1A008DC764 /* Frameworks */,
+				4F204C011DB32D1A008DC764 /* Resources */,
+				CA33B7FC88DAA61B5F461B2C /* [CP] Embed Pods Frameworks */,
+				ECAED5920F61FCE9E22AFE72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,27 +159,26 @@
 			);
 			name = ESPictureBrowserDemo;
 			productName = ESPictureBrowserDemo;
-			productReference = 4F204B471DB279CF008DC764 /* ESPictureBrowserDemo.app */;
+			productReference = 4F204C031DB32D1A008DC764 /* ESPictureBrowserDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4F204B3F1DB279CF008DC764 /* Project object */ = {
+		4F204BFB1DB32D1A008DC764 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = EnjoySR;
 				TargetAttributes = {
-					4F204B461DB279CF008DC764 = {
+					4F204C021DB32D1A008DC764 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8UF26TTV2Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 4F204B421DB279CF008DC764 /* Build configuration list for PBXProject "ESPictureBrowserDemo" */;
+			buildConfigurationList = 4F204BFE1DB32D1A008DC764 /* Build configuration list for PBXProject "ESPictureBrowserDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,62 +186,32 @@
 				en,
 				Base,
 			);
-			mainGroup = 4F204B3E1DB279CF008DC764;
-			productRefGroup = 4F204B481DB279CF008DC764 /* Products */;
+			mainGroup = 4F204BFA1DB32D1A008DC764;
+			productRefGroup = 4F204C041DB32D1A008DC764 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F204B461DB279CF008DC764 /* ESPictureBrowserDemo */,
+				4F204C021DB32D1A008DC764 /* ESPictureBrowserDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F204B451DB279CF008DC764 /* Resources */ = {
+		4F204C011DB32D1A008DC764 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F204B551DB279CF008DC764 /* LaunchScreen.storyboard in Resources */,
-				4F204B5D1DB279DF008DC764 /* list.json in Resources */,
-				4F204B521DB279CF008DC764 /* Assets.xcassets in Resources */,
-				4F204B501DB279CF008DC764 /* Main.storyboard in Resources */,
+				4F204C161DB32D1A008DC764 /* LaunchScreen.storyboard in Resources */,
+				4F204C1E1DB32DFD008DC764 /* list.json in Resources */,
+				4F204C131DB32D1A008DC764 /* Assets.xcassets in Resources */,
+				4F204C111DB32D1A008DC764 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		280971184531545BBBBB2652 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2977DC1A913107FFF12731D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B976DBB309B53B7CD4201D88 /* [CP] Check Pods Manifest.lock */ = {
+		6CE26BA2BF99BAB24104A5E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,38 +226,69 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CA33B7FC88DAA61B5F461B2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECAED5920F61FCE9E22AFE72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4F204B431DB279CF008DC764 /* Sources */ = {
+		4F204BFF1DB32D1A008DC764 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F204B4D1DB279CF008DC764 /* ViewController.swift in Sources */,
-				4F204B641DB27A31008DC764 /* ESPictureModel.swift in Sources */,
-				4F204B4B1DB279CF008DC764 /* AppDelegate.swift in Sources */,
-				4F204B681DB27EA3008DC764 /* ESCellLayout.swift in Sources */,
-				4F204B661DB27B15008DC764 /* ESCellNode.swift in Sources */,
-				4F204B991DB31CBF008DC764 /* ESPictureBrowser.swift in Sources */,
-				4F204B9A1DB31CBF008DC764 /* ESPictureView.swift in Sources */,
+				4F39BF351DB32EE9004362CF /* ESPictureModel.m in Sources */,
+				4F39BF421DB36E52004362CF /* ESPictureView.m in Sources */,
+				4F39BF3B1DB332A0004362CF /* ESCellLayout.m in Sources */,
+				4F39BF3F1DB36E07004362CF /* ESPictureBrowser.m in Sources */,
+				4F39BF381DB330BA004362CF /* ESCellNode.m in Sources */,
+				4F204C0E1DB32D1A008DC764 /* ViewController.m in Sources */,
+				4F204C0B1DB32D1A008DC764 /* AppDelegate.m in Sources */,
+				4F204C081DB32D1A008DC764 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4F204B4E1DB279CF008DC764 /* Main.storyboard */ = {
+		4F204C0F1DB32D1A008DC764 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4F204B4F1DB279CF008DC764 /* Base */,
+				4F204C101DB32D1A008DC764 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4F204B531DB279CF008DC764 /* LaunchScreen.storyboard */ = {
+		4F204C141DB32D1A008DC764 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4F204B541DB279CF008DC764 /* Base */,
+				4F204C151DB32D1A008DC764 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -272,7 +296,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4F204B571DB279CF008DC764 /* Debug */ = {
+		4F204C181DB32D1A008DC764 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,12 +340,10 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		4F204B581DB279CF008DC764 /* Release */ = {
+		4F204C191DB32D1A008DC764 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -358,63 +380,58 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		4F204B5A1DB279CF008DC764 /* Debug */ = {
+		4F204C1B1DB32D1A008DC764 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24F68CFA11D7D952C3397D53 /* Pods-ESPictureBrowserDemo.debug.xcconfig */;
+			baseConfigurationReference = 800A2B6F20A0A875DDA59145 /* Pods-ESPictureBrowserDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UF26TTV2Y;
 				INFOPLIST_FILE = ESPictureBrowserDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EnjoySR.ESPictureBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		4F204B5B1DB279CF008DC764 /* Release */ = {
+		4F204C1C1DB32D1A008DC764 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18061028A60BB1F53F30E80B /* Pods-ESPictureBrowserDemo.release.xcconfig */;
+			baseConfigurationReference = CD20E75C06E5CEFC879DDBB1 /* Pods-ESPictureBrowserDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UF26TTV2Y;
 				INFOPLIST_FILE = ESPictureBrowserDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EnjoySR.ESPictureBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F204B421DB279CF008DC764 /* Build configuration list for PBXProject "ESPictureBrowserDemo" */ = {
+		4F204BFE1DB32D1A008DC764 /* Build configuration list for PBXProject "ESPictureBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F204B571DB279CF008DC764 /* Debug */,
-				4F204B581DB279CF008DC764 /* Release */,
+				4F204C181DB32D1A008DC764 /* Debug */,
+				4F204C191DB32D1A008DC764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F204B591DB279CF008DC764 /* Build configuration list for PBXNativeTarget "ESPictureBrowserDemo" */ = {
+		4F204C1A1DB32D1A008DC764 /* Build configuration list for PBXNativeTarget "ESPictureBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F204B5A1DB279CF008DC764 /* Debug */,
-				4F204B5B1DB279CF008DC764 /* Release */,
+				4F204C1B1DB32D1A008DC764 /* Debug */,
+				4F204C1C1DB32D1A008DC764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4F204B3F1DB279CF008DC764 /* Project object */;
+	rootObject = 4F204BFB1DB32D1A008DC764 /* Project object */;
 }
