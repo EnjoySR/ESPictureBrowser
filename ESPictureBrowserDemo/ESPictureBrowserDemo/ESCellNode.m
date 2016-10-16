@@ -76,10 +76,27 @@
 
 #pragma mark - ESPictureBrowserDelegate
 
+
+/**
+ 获取对应索引的视图
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 视图
+ */
 - (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index {
     return [self.pictureImageNodes objectAtIndex:index].view;
 }
 
+/**
+ 获取对应索引的图片大小
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 图片大小
+ */
 - (CGSize)pictureView:(ESPictureBrowser *)pictureBrowser imageSizeForIndex:(NSInteger)index {
     
     ESPictureModel *model = self.pictureModels[index];
@@ -87,10 +104,26 @@
     return size;
 }
 
+/**
+ 获取对应索引默认图片，可以是占位图片，可以是缩略图
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 图片
+ */
 - (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index {
     return [self.pictureImageNodes objectAtIndex:index].image;
 }
 
+/**
+ 获取对应索引的高质量图片地址字符串
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 图片的 url 字符串
+ */
 - (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index {
     ESPictureModel *model = self.pictureModels[index];
     return model.picUrl;

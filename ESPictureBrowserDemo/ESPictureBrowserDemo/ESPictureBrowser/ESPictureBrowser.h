@@ -91,7 +91,7 @@
 
  @param fromView            用户点击的视图
  @param picturesCount       图片的张数
- @param currentPictureIndex 当前用户点击的图片张数
+ @param currentPictureIndex 当前用户点击的图片索引
  */
 - (void)showFormView:(UIView *)fromView picturesCount:(NSUInteger)picturesCount currentPictureIndex:(NSUInteger)currentPictureIndex;
 
