@@ -10,6 +10,7 @@
 @class ESPictureBrowser;
 @protocol ESPictureBrowserDelegate <NSObject>
 
+@required
 /**
  获取对应索引的图片大小
 
@@ -18,7 +19,7 @@
 
  @return 图片大小
  */
-- (CGSize)pictureView:(ESPictureBrowser *)pictureBrowser imageSizeForIndex:(NSUInteger)index;
+- (CGSize)pictureView:(ESPictureBrowser *)pictureBrowser imageSizeForIndex:(NSInteger)index;
 
 /**
  获取对应索引的视图
@@ -28,9 +29,11 @@
  
  @return 视图
  */
-- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSUInteger)index;
+- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index;
 
 
+// 以下两个代理方法必须要实现一个
+@optional
 /**
  获取对应索引默认图片，可以是占位图片，可以是缩略图
 
@@ -39,7 +42,7 @@
 
  @return 图片
  */
-- (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSUInteger)index;
+- (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index;
 
 
 /**
@@ -50,7 +53,7 @@
 
  @return 图片的 url 字符串
  */
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSUInteger)index;
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
 
 @end
 

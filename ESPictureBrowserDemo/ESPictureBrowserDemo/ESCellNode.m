@@ -76,22 +76,22 @@
 
 #pragma mark - ESPictureBrowserDelegate
 
-- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSUInteger)index {
+- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index {
     return [self.pictureImageNodes objectAtIndex:index].view;
 }
 
-- (CGSize)pictureView:(ESPictureBrowser *)pictureBrowser imageSizeForIndex:(NSUInteger)index {
+- (CGSize)pictureView:(ESPictureBrowser *)pictureBrowser imageSizeForIndex:(NSInteger)index {
     
     ESPictureModel *model = self.pictureModels[index];
     CGSize size = CGSizeMake(model.width, model.height);
     return size;
 }
 
-- (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSUInteger)index {
+- (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index {
     return [self.pictureImageNodes objectAtIndex:index].image;
 }
 
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSUInteger)index {
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index {
     ESPictureModel *model = self.pictureModels[index];
     return model.picUrl;
 }

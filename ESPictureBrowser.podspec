@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ESPictureBrowser"
-  s.version      = "0.2"
+  s.version      = "0.2.1"
   s.summary      = "A very simple to use picture browser.."
   s.homepage     = "https://github.com/EnjoySR/ESPictureBrowser"
   s.license = { :type => 'MIT'}
