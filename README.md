@@ -6,7 +6,7 @@
 
 ## 效果图
 
-<img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_20_11" width="30%"/><img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_22_23.gif" width="30%"/><img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_24_43" width="30%"/>
+<img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_20_11.gif" width="33%"/><img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_22_23.gif" width="33%"/><img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_24_43.gif" width="33%"/>
 
 ## 集成方式
 - cocoapod
@@ -102,7 +102,8 @@ pod 'ESPictureBrowser', '~> 0.2.1'
 具体见上面 Demo
 ## 其他
 不存在<即刻 v2.7.0>中的图片放大之后，拖动消失的 Bug，具体 bug 见效果图：
-![](https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_29_56.gif)
+
+<img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_29_56.gif" width="50%"/>
 
 ## TODO
 - 加载图片进度效果
