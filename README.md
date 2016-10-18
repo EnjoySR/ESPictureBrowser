@@ -27,12 +27,25 @@ pod 'ESPictureBrowser', '~> 0.2.1'
  @param picturesCount       图片的张数
  @param currentPictureIndex 当前用户点击的图片索引
  */
-- (void)showFormView:(UIView *)fromView picturesCount:(NSUInteger)picturesCount currentPictureIndex:(NSUInteger)currentPictureIndex
+- (void)showFormView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex
 ```
 
 - 实现代理方法
 
 ```objc
+
+/**
+ 获取对应索引的视图
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 视图
+ */
+- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index {
+    ...
+}
+
 /**
  获取对应索引的图片大小
  
@@ -96,7 +109,7 @@ pod 'ESPictureBrowser', '~> 0.2.1'
 /**
  长按图片要执行的事件，将长按的索引回调
  */
-@property (nonatomic, copy) void(^longPressBlock)(NSUInteger);
+@property (nonatomic, copy) void(^longPressBlock)(NSInteger);
 ```
 
 具体见上面 Demo

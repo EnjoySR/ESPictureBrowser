@@ -19,6 +19,7 @@
 		4F39BF3B1DB332A0004362CF /* ESCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF3A1DB332A0004362CF /* ESCellLayout.m */; };
 		4F39BF3F1DB36E07004362CF /* ESPictureBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */; };
 		4F39BF421DB36E52004362CF /* ESPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BF411DB36E52004362CF /* ESPictureView.m */; };
+		4F9E1F8E1DB633A60040FB5C /* ESPictureProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E1F8D1DB633A60040FB5C /* ESPictureProgressView.m */; };
 		9EAFA92710C6273E0F311114 /* libPods-ESPictureBrowserDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68C6288AF9166C306A094F7 /* libPods-ESPictureBrowserDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureBrowser.m; sourceTree = "<group>"; };
 		4F39BF401DB36E52004362CF /* ESPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureView.h; sourceTree = "<group>"; };
 		4F39BF411DB36E52004362CF /* ESPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureView.m; sourceTree = "<group>"; };
+		4F9E1F8C1DB633A60040FB5C /* ESPictureProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureProgressView.h; sourceTree = "<group>"; };
+		4F9E1F8D1DB633A60040FB5C /* ESPictureProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureProgressView.m; sourceTree = "<group>"; };
 		800A2B6F20A0A875DDA59145 /* Pods-ESPictureBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B68C6288AF9166C306A094F7 /* libPods-ESPictureBrowserDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESPictureBrowserDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20E75C06E5CEFC879DDBB1 /* Pods-ESPictureBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESPictureBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESPictureBrowserDemo/Pods-ESPictureBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				4F39BF3E1DB36E07004362CF /* ESPictureBrowser.m */,
 				4F39BF401DB36E52004362CF /* ESPictureView.h */,
 				4F39BF411DB36E52004362CF /* ESPictureView.m */,
+				4F9E1F8C1DB633A60040FB5C /* ESPictureProgressView.h */,
+				4F9E1F8D1DB633A60040FB5C /* ESPictureProgressView.m */,
 			);
 			path = ESPictureBrowser;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				4F39BF351DB32EE9004362CF /* ESPictureModel.m in Sources */,
 				4F39BF421DB36E52004362CF /* ESPictureView.m in Sources */,
 				4F39BF3B1DB332A0004362CF /* ESCellLayout.m in Sources */,
+				4F9E1F8E1DB633A60040FB5C /* ESPictureProgressView.m in Sources */,
 				4F39BF3F1DB36E07004362CF /* ESPictureBrowser.m in Sources */,
 				4F39BF381DB330BA004362CF /* ESCellNode.m in Sources */,
 				4F204C0E1DB32D1A008DC764 /* ViewController.m in Sources */,
@@ -391,6 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UF26TTV2Y;
 				INFOPLIST_FILE = ESPictureBrowserDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EnjoySR.ESPictureBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UF26TTV2Y;
 				INFOPLIST_FILE = ESPictureBrowserDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EnjoySR.ESPictureBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

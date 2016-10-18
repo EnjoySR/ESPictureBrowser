@@ -10,6 +10,7 @@
 #import "ESPictureModel.h"
 #import "ESCellNode.h"
 #import <AsyncDisplayKit.h>
+#import <YYWebImage.h>
 
 @interface ViewController ()<ASTableDelegate, ASTableDataSource>
 
@@ -51,10 +52,13 @@
 }
 
 - (void)viewDidLoad {
-    CGFloat a = -124;
-    
-    NSLog(@"%f",ABS(a));
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearCache)];
+}
+
+- (void)clearCache {
+    [[YYWebImageManager sharedManager].cache.diskCache removeAllObjects];
+    [[YYWebImageManager sharedManager].cache.memoryCache removeAllObjects];
 }
 
 #pragma mark - "代理数据源方法"

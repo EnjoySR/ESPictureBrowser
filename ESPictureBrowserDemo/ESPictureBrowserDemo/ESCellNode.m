@@ -71,6 +71,9 @@
     
     ESPictureBrowser *browser = [[ESPictureBrowser alloc] init];
     [browser setDelegate:self];
+    [browser setLongPressBlock:^(NSInteger index) {
+        NSLog(@"%zd", index);
+    }];
     [browser showFormView:imageNode.view picturesCount:self.pictureModels.count currentPictureIndex:[self.pictureImageNodes indexOfObject:imageNode]];
 }
 
