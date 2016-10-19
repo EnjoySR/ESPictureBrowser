@@ -11,6 +11,7 @@
 @interface ESPictureModel : NSObject
 
 @property (nonatomic, copy) NSString *thumbnailUrl;
+@property (nonatomic, copy) NSString *smallPicUrl;
 @property (nonatomic, copy) NSString *middlePicUrl;
 @property (nonatomic, copy) NSString *picUrl;
 @property (nonatomic, copy) NSString *format;

@@ -63,7 +63,7 @@
     self.maximumZoomScale = 2;
     
     // 添加 imageView
-    UIImageView *imageView = [[UIImageView alloc] init];
+    YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] init];
     imageView.clipsToBounds = true;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.frame = self.bounds;

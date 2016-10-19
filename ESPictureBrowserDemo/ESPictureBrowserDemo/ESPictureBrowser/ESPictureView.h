@@ -22,6 +22,7 @@
 // SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import <YYImage/YYAnimatedImageView.h>
 
 
 @class ESPictureView;

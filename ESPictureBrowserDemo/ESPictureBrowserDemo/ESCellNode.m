@@ -11,6 +11,8 @@
 #import "ESCellLayout.h"
 #import <AsyncDisplayKit.h>
 #import "ESPictureBrowser.h"
+#import <YYImage/YYAnimatedImageView.h>
+#import <YYWebImage/YYWebImage.h>
 
 @interface ESCellNode()<ESPictureBrowserDelegate>
 
@@ -51,9 +53,20 @@
     self.textNode.attributedText = attr;
     
     for (ESPictureModel *pictureModel in pictureModels) {
+        
         ASNetworkImageNode *node = [[ASNetworkImageNode alloc] init];
+        NSURL *imageUrl = [NSURL URLWithString:pictureModel.smallPicUrl];
+        if ([pictureModel.format isEqualToString:@"gif"]) {
+            YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] init];
+            imageView.clipsToBounds = true;
+            [node.view addSubview:imageView];
+            [imageView yy_setImageWithURL:imageUrl placeholder:nil];
+        }else {
+            node.URL = [NSURL URLWithString:pictureModel.middlePicUrl];
+        }
+        node.shouldRenderProgressImages = false;
+        node.clipsToBounds = true;
         node.backgroundColor = ASDisplayNodeDefaultPlaceholderColor();
-        node.URL = [NSURL URLWithString:pictureModel.middlePicUrl];
         [node addTarget:self action:@selector(imageClick:) forControlEvents:ASControlNodeEventTouchUpInside];
         [self addSubnode:node];
         [self.pictureImageNodes addObject:node];
@@ -67,8 +80,19 @@
     return result;
 }
 
-- (void)imageClick:(ASNetworkImageNode *)imageNode {
+- (void)layout {
+    [super layout];
     
+    for (ASNetworkImageNode *imageNode in self.pictureImageNodes) {
+        YYAnimatedImageView *imageView = imageNode.view.subviews.firstObject;
+        if (imageView != nil) {
+            imageView.frame = imageNode.view.bounds;
+        }
+    }
+}
+
+
+- (void)imageClick:(ASNetworkImageNode *)imageNode {
     ESPictureBrowser *browser = [[ESPictureBrowser alloc] init];
     [browser setDelegate:self];
     [browser setLongPressBlock:^(NSInteger index) {
@@ -116,7 +140,14 @@
  @return 图片
  */
 - (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index {
-    return [self.pictureImageNodes objectAtIndex:index].image;
+    UIImage *image;
+    ASNetworkImageNode *imageNode =  [self.pictureImageNodes objectAtIndex:index];
+    if (imageNode.view.subviews.count == 1) {
+        image = ((YYAnimatedImageView *)imageNode.view.subviews.firstObject).image;
+    }else {
+        image = imageNode.image;
+    }
+    return image;
 }
 
 /**
