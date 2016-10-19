@@ -10,7 +10,7 @@
 #import "ESPictureModel.h"
 #import "ESCellNode.h"
 #import <AsyncDisplayKit.h>
-#import <YYWebImage.h>
+#import <YYWebImage/YYWebImage.h>
 
 @interface ViewController ()<ASTableDelegate, ASTableDataSource>
 
