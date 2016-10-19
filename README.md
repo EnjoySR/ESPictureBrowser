@@ -12,7 +12,7 @@
 - cocoapod
 
 ```
-pod 'ESPictureBrowser', '~> 0.2.1'
+pod 'ESPictureBrowser'
 ```
 
 ## 使用方式
@@ -119,7 +119,7 @@ pod 'ESPictureBrowser', '~> 0.2.1'
 <img src="https://raw.githubusercontent.com/EnjoySR/ESPictureBrowser/master/ScreenShot/2016-10-16_23_29_56.gif" width="50%"/>
 
 ## TODO
-- 加载图片进度效果
+- 加载图片进度效果（已搞定）
 
 ## License
 MIT
