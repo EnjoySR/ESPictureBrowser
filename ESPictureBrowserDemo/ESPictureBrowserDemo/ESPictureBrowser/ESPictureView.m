@@ -23,7 +23,7 @@
 
 #import "ESPictureView.h"
 #import "ESPictureProgressView.h"
-#import <YYWebImage.h>
+#import <YYWebImage/YYWebImage.h>
 
 @interface ESPictureView()<UIScrollViewDelegate>
 

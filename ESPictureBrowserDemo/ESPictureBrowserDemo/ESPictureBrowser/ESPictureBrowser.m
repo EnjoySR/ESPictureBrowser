@@ -23,7 +23,7 @@
 
 #import "ESPictureBrowser.h"
 #import "ESPictureView.h"
-#import <YYWebImage.h>
+#import <YYWebImage/YYWebImage.h>
 
 @interface ESPictureBrowser()<UIScrollViewDelegate, ESPictureViewDelegate>
 
