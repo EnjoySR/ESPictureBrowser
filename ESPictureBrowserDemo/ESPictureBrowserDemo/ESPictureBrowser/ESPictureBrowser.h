@@ -37,6 +37,15 @@
  */
 - (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index;
 
+/**
+ 获取对应索引的高质量图片地址字符串
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 图片的 url 字符串
+ */
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
 
 @optional
 /**
@@ -62,15 +71,6 @@
 - (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index;
 
 
-/**
- 获取对应索引的高质量图片地址字符串
-
- @param pictureBrowser 图片浏览器
- @param index          索引
-
- @return 图片的 url 字符串
- */
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
 
 @end
 
