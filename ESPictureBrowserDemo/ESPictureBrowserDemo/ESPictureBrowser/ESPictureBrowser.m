@@ -102,8 +102,8 @@
     NSAssert(self.delegate != nil, @"Please set up delegate for pictureBrowser");
     
     // 记录值并设置位置
+    _currentPage = currentPictureIndex;
     self.picturesCount = picturesCount;
-    self.currentPage = currentPictureIndex;
     [self setPageText:currentPictureIndex];
     // 添加到 window 上
     [[UIApplication sharedApplication].keyWindow addSubview:self];
