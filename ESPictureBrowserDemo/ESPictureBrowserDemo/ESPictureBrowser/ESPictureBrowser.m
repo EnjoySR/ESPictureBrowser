@@ -95,7 +95,7 @@
     self.dismissTapGes = tapGes;
 }
 
-- (void)showFormView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex {
+- (void)showFromView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex {
     
     NSString *errorStr = [NSString stringWithFormat:@"Parameter is not correct, pictureCount is %zd, currentPictureIndex is %zd", picturesCount, currentPictureIndex];
     NSAssert(picturesCount > 0 && currentPictureIndex < picturesCount, errorStr);
@@ -340,6 +340,10 @@
 }
 - (void)pictureView:(ESPictureView *)pictureView scale:(CGFloat)scale {
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1 - scale];
+}
+    
+- (void)dealloc {
+    NSLog(@"图片视频已销毁");
 }
 
 @end

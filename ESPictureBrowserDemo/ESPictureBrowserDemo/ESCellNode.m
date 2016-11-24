@@ -98,7 +98,7 @@
     [browser setLongPressBlock:^(NSInteger index) {
         NSLog(@"%zd", index);
     }];
-    [browser showFormView:imageNode.view picturesCount:self.pictureModels.count currentPictureIndex:[self.pictureImageNodes indexOfObject:imageNode]];
+    [browser showFromView:imageNode.view picturesCount:self.pictureModels.count currentPictureIndex:[self.pictureImageNodes indexOfObject:imageNode]];
 }
 
 #pragma mark - ESPictureBrowserDelegate

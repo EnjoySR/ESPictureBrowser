@@ -61,6 +61,10 @@
     [[YYWebImageManager sharedManager].cache.diskCache removeAllObjects];
     [[YYWebImageManager sharedManager].cache.memoryCache removeAllObjects];
 }
+    
+- (void)dealloc {
+    NSLog(@"销毁");
+}
 
 #pragma mark - "代理数据源方法"
 
@@ -81,3 +85,4 @@
 }
 
 @end
+
