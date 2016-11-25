@@ -27,7 +27,7 @@ pod 'ESPictureBrowser'
  @param picturesCount       图片的张数
  @param currentPictureIndex 当前用户点击的图片索引
  */
-- (void)showFormView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex
+- (void)showFromView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex
 ```
 
 - 实现代理方法
