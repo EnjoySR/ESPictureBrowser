@@ -112,7 +112,7 @@
     // 滚动到指定位置
     [self.scrollView setContentOffset:CGPointMake(currentPictureIndex * _scrollView.frame.size.width, 0) animated:false];
     // 设置第1个 view 的位置以及大小
-    ESPictureView *pictureView = [self setPictureViewForIndex:currentPictureIndex];
+    ESPictureView *pictureView = [self setPictureViewForIndex:currentPictureIndex fromView: fromView];
     // 获取来源图片在屏幕上的位置
     CGRect rect = [fromView convertRect:fromView.bounds toView:nil];
     
@@ -123,19 +123,30 @@
         // 设置左边与右边的 pictureView
         if (currentPictureIndex != 0 && picturesCount > 1) {
             // 设置左边
-            [self setPictureViewForIndex:currentPictureIndex - 1];
+            [self setPictureViewForIndex:currentPictureIndex - 1 fromView: nil];
         }
         
         if (currentPictureIndex < picturesCount - 1) {
             // 设置右边
-            [self setPictureViewForIndex:currentPictureIndex + 1];
+            [self setPictureViewForIndex:currentPictureIndex + 1 fromView: nil];
         }
     }];
 }
 
 - (void)dismiss {
-    UIView *endView = [_delegate pictureView:self viewForIndex:_currentPage];
-    CGRect rect = [endView convertRect:endView.bounds toView:nil];
+    
+    CGFloat x = [UIScreen mainScreen].bounds.size.width * 0.5;
+    CGFloat y = [UIScreen mainScreen].bounds.size.height * 0.5;
+    CGRect rect = CGRectMake(x, y, 0, 0);
+    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
+        UIView *endView = [_delegate pictureView:self viewForIndex:_currentPage];
+        if (endView.superview != nil) {
+            rect = [endView convertRect:endView.bounds toView:nil];
+        }else {
+            rect = endView.frame;
+        }
+    }
+    
     // 取到当前显示的 pictureView
     ESPictureView *pictureView = [[_pictureViews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"index == %d", _currentPage]] firstObject];
     // 取消所有的下载
@@ -205,12 +216,12 @@
     if (currentPage > oldValue) {
         // 往右滑，设置右边的视图
         if (currentPage + 1 < _picturesCount) {
-            [self setPictureViewForIndex:currentPage + 1];
+            [self setPictureViewForIndex:currentPage + 1 fromView: nil];
         }
     }else {
         // 往左滑，设置左边的视图
         if (currentPage > 0) {
-            [self setPictureViewForIndex:currentPage - 1];
+            [self setPictureViewForIndex:currentPage - 1 fromView: nil];
         }
     }
     
@@ -220,10 +231,11 @@
  设置pitureView到指定位置
 
  @param index 索引
+ @param fromView 从哪个控件显示
 
  @return 当前设置的控件
  */
-- (ESPictureView *)setPictureViewForIndex:(NSInteger)index {
+- (ESPictureView *)setPictureViewForIndex:(NSInteger)index fromView:(UIView *)fromView {
     [self removeViewToReUse];
     ESPictureView *view = [self getPhotoView];
     view.index = index;
@@ -232,7 +244,7 @@
     view.frame = frame;
     
     // 设置图片的大小<在下载完毕之后会根据下载的图片计算大小>
-    CGSize defaultSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width);
+    CGSize defaultSize = fromView.bounds.size;
     
     void(^setImageSizeBlock)(UIImage *) = ^(UIImage *image) {
         if (image != nil) {
@@ -258,6 +270,8 @@
             setImageSizeBlock(image);
             // 并且设置占位图片
             view.placeholderImage = image;
+        }else {
+            view.pictureSize = defaultSize;
         }
     }else {
         // 3. 如果都没有就设置为屏幕宽度，待下载完成之后再次计算
@@ -330,20 +344,21 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSUInteger page = (scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+    if (self.currentPage != page) {
+        if ([_delegate respondsToSelector:@selector(pictureView:scrollToIndex:)]) {
+            [_delegate pictureView:self scrollToIndex: page];
+        }
+    }
     self.currentPage = page;
 }
 
-#pragma mark - ESPictureViewDelegate 
+#pragma mark - ESPictureViewDelegate
 
 - (void)pictureViewTouch:(ESPictureView *)pictureView {
     [self dismiss];
 }
 - (void)pictureView:(ESPictureView *)pictureView scale:(CGFloat)scale {
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1 - scale];
-}
-    
-- (void)dealloc {
-    NSLog(@"图片视频已销毁");
 }
 
 @end

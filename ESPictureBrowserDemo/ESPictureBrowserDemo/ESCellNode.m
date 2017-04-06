@@ -163,4 +163,8 @@
     return model.picUrl;
 }
 
+- (void)pictureView:(ESPictureBrowser *)pictureBrowser scrollToIndex:(NSInteger)index {
+    NSLog(@"%ld", index);
+}
+
 @end

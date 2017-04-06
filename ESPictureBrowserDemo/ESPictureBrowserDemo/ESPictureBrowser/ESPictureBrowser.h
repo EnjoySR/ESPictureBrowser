@@ -28,16 +28,6 @@
 @required
 
 /**
- 获取对应索引的视图
- 
- @param pictureBrowser 图片浏览器
- @param index          索引
- 
- @return 视图
- */
-- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index;
-
-/**
  获取对应索引的高质量图片地址字符串
  
  @param pictureBrowser 图片浏览器
@@ -48,6 +38,17 @@
 - (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
 
 @optional
+
+/**
+ 获取对应索引的视图
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 视图
+ */
+- (UIView *)pictureView:(ESPictureBrowser *)pictureBrowser viewForIndex:(NSInteger)index;
+
 /**
  获取对应索引的图片大小
  
@@ -70,7 +71,13 @@
  */
 - (UIImage *)pictureView:(ESPictureBrowser *)pictureBrowser defaultImageForIndex:(NSInteger)index;
 
+/**
+ 滚动到指定页时会调用该方法
 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ */
+- (void)pictureView:(ESPictureBrowser *)pictureBrowser scrollToIndex:(NSInteger)index;
 
 @end
 
