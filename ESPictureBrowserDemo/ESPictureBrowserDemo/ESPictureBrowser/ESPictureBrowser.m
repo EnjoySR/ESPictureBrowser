@@ -75,6 +75,12 @@
     scrollView.showsHorizontalScrollIndicator = false;
     scrollView.pagingEnabled = true;
     scrollView.delegate = self;
+    //如果是iOS11的系统, 则不自动调整内边距
+    if (@available(iOS 11.0, *)) {
+        if ([scrollView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+    }
     [self addSubview:scrollView];
     self.scrollView = scrollView;
     
