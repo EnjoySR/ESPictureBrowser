@@ -61,7 +61,11 @@
     self.showsHorizontalScrollIndicator = false;
     self.showsVerticalScrollIndicator = false;
     self.maximumZoomScale = 2;
-    
+    if (@available(iOS 11.0, *)) {
+        if ([self respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+    }
     // 添加 imageView
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] init];
     imageView.clipsToBounds = true;
