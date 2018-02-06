@@ -41,8 +41,10 @@
 @property (nonatomic, weak) UILabel *pageTextLabel;
 /// 消失的 tap 手势
 @property (nonatomic, weak) UITapGestureRecognizer *dismissTapGes;
-
-
+/// 结束时, 原来界面 image 所在
+@property (nonatomic, strong) UIView *endView;
+/// 开始时, 原来界面 image 所在
+@property (nonatomic, strong) UIView *fromView;
 @end
 
 @implementation ESPictureBrowser
@@ -96,11 +98,13 @@
 }
 
 - (void)showFromView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex {
-    
     NSString *errorStr = [NSString stringWithFormat:@"Parameter is not correct, pictureCount is %zd, currentPictureIndex is %zd", picturesCount, currentPictureIndex];
     NSAssert(picturesCount > 0 && currentPictureIndex < picturesCount, errorStr);
     NSAssert(self.delegate != nil, @"Please set up delegate for pictureBrowser");
-    
+    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
+        _fromView = [_delegate pictureView:self viewForIndex:_currentPage];
+        _fromView.alpha = 0;
+    }
     // 记录值并设置位置
     _currentPage = currentPictureIndex;
     self.picturesCount = picturesCount;
@@ -139,11 +143,11 @@
     CGFloat y = [UIScreen mainScreen].bounds.size.height * 0.5;
     CGRect rect = CGRectMake(x, y, 0, 0);
     if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
-        UIView *endView = [_delegate pictureView:self viewForIndex:_currentPage];
-        if (endView.superview != nil) {
-            rect = [endView convertRect:endView.bounds toView:nil];
+        _endView = [_delegate pictureView:self viewForIndex:_currentPage];
+        if (_endView.superview != nil) {
+            rect = [_endView convertRect:_endView.bounds toView:nil];
         }else {
-            rect = endView.frame;
+            rect = _endView.frame;
         }
     }
     
@@ -164,6 +168,7 @@
         self.pageTextLabel.alpha = 0;
     } completionBlock:^{
         [self removeFromSuperview];
+        _endView.alpha = 1;
     }];
 }
 
@@ -229,10 +234,10 @@
 
 /**
  设置pitureView到指定位置
-
+ 
  @param index 索引
  @param fromView 从哪个控件显示
-
+ 
  @return 当前设置的控件
  */
 - (ESPictureView *)setPictureViewForIndex:(NSInteger)index fromView:(UIView *)fromView {
@@ -294,7 +299,7 @@
 
 /**
  获取图片控件：如果缓存里面有，那就从缓存里面取，没有就创建
-
+ 
  @return 图片控件
  */
 - (ESPictureView *)getPhotoView {
@@ -340,10 +345,15 @@
     _pageTextLabel.center = self.pageTextCenter;
 }
 
-#pragma mark - UIScrollViewDelegate 
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    _fromView.alpha = 1;
     NSUInteger page = (scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
+        _fromView = [_delegate pictureView:self viewForIndex:page];
+        _fromView.alpha = 0;
+    }
     if (self.currentPage != page) {
         if ([_delegate respondsToSelector:@selector(pictureView:scrollToIndex:)]) {
             [_delegate pictureView:self scrollToIndex: page];
@@ -362,3 +372,4 @@
 }
 
 @end
+
