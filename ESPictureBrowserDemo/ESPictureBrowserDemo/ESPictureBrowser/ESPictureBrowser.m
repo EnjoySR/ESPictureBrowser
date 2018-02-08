@@ -301,7 +301,7 @@
     }
     
     view.urlString = [_delegate pictureView:self highQualityUrlStringForIndex:index];
-    
+    view.imageName = [_delegate pictureView:self localImageAtIndex:index];
     CGPoint center = view.center;
     center.x = index * _scrollView.frame.size.width + _scrollView.frame.size.width * 0.5;
     view.center = center;

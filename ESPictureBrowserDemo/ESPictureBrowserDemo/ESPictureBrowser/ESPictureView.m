@@ -141,7 +141,22 @@
     }
 }
 
+- (void)setImageName:(NSString *)imageName {
+    if (!imageName) {
+        return;
+    }
+    _imageName = imageName;
+    [self.progressView hide];
+    self.userInteractionEnabled = true;
+    YYImage *image = [YYImage imageNamed:imageName];
+    [self setPictureSize:image.size];
+    self.imageView.image = image;
+}
+
 - (void)setUrlString:(NSString *)urlString {
+    if (!urlString) {
+        return;
+    }
     _urlString = urlString;
     [self.imageView yy_cancelCurrentImageRequest];
     self.progressView.progress = 0.01;

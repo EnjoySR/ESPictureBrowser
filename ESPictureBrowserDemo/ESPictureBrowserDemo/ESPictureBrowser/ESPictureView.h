@@ -44,6 +44,8 @@
 @property (nonatomic, strong) UIImage *placeholderImage;
 // 图片的地址 URL
 @property (nonatomic, strong) NSString *urlString;
+// 本地图片名
+@property (nonatomic, strong) NSString *imageName;
 // 当前显示图片的控件
 @property (nonatomic, strong, readonly) UIImageView *imageView;
 // 代理

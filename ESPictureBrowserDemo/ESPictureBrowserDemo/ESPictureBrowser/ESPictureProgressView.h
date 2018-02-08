@@ -28,5 +28,5 @@
 @property (nonatomic, assign) CGFloat progress;
 
 - (void)showError;
-
+- (void)hide;
 @end

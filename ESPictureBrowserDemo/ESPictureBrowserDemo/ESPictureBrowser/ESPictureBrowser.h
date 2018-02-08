@@ -28,6 +28,7 @@
 @required
 
 /**
+ 如果加载网络图片, 实现这个方法 下面方法返回 nil
  获取对应索引的高质量图片地址字符串
  
  @param pictureBrowser 图片浏览器
@@ -36,6 +37,18 @@
  @return 图片的 url 字符串
  */
 - (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
+
+
+/**
+ 如果加载本地图片, 实现这个方法 上面方法返回 nil
+ 获取对应索引的高质量图片地址字符串
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ 
+ @return 本地图片名
+ */
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser localImageAtIndex:(NSInteger)index;
 
 @optional
 
