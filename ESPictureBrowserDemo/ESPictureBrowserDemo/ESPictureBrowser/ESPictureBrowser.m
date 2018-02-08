@@ -97,7 +97,18 @@
     self.dismissTapGes = tapGes;
 }
 
+- (void)hideStautsBar {
+    UIView *statusBar = [[UIApplication sharedApplication] valueForKey:@"statusBar"];
+    statusBar.alpha = 0;
+}
+
+- (void)showStatusBar {
+    UIView *statusBar = [[UIApplication sharedApplication] valueForKey:@"statusBar"];
+    statusBar.alpha = 1;
+}
+
 - (void)showFromView:(UIView *)fromView picturesCount:(NSInteger)picturesCount currentPictureIndex:(NSInteger)currentPictureIndex {
+    [self hideStautsBar];
     NSString *errorStr = [NSString stringWithFormat:@"Parameter is not correct, pictureCount is %zd, currentPictureIndex is %zd", picturesCount, currentPictureIndex];
     NSAssert(picturesCount > 0 && currentPictureIndex < picturesCount, errorStr);
     NSAssert(self.delegate != nil, @"Please set up delegate for pictureBrowser");
@@ -166,6 +177,7 @@
     [pictureView animationDismissWithToRect:rect animationBlock:^{
         self.backgroundColor = [UIColor clearColor];
         self.pageTextLabel.alpha = 0;
+        [self showStatusBar];
     } completionBlock:^{
         [self removeFromSuperview];
         _endView.alpha = 1;
