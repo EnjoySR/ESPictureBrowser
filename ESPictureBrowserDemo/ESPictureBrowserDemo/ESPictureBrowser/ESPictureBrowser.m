@@ -49,9 +49,9 @@
 
 @implementation ESPictureBrowser
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         [self setupUI];
     }
@@ -112,10 +112,6 @@
     NSString *errorStr = [NSString stringWithFormat:@"Parameter is not correct, pictureCount is %zd, currentPictureIndex is %zd", picturesCount, currentPictureIndex];
     NSAssert(picturesCount > 0 && currentPictureIndex < picturesCount, errorStr);
     NSAssert(self.delegate != nil, @"Please set up delegate for pictureBrowser");
-    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
-        _fromView = [_delegate pictureView:self viewForIndex:_currentPage];
-        _fromView.alpha = 0;
-    }
     // 记录值并设置位置
     _currentPage = currentPictureIndex;
     self.picturesCount = picturesCount;
@@ -192,8 +188,8 @@
 
 - (void)longPress:(UILongPressGestureRecognizer *)ges {
     if (ges.state == UIGestureRecognizerStateEnded) {
-        if (self.longPressBlock) {
-            self.longPressBlock(_currentPage);
+        if ([_delegate respondsToSelector:@selector(pictureView:longPressAtIndex:)]) {
+            [_delegate pictureView:self longPressAtIndex:_currentPage];
         }
     }
 }
@@ -299,9 +295,12 @@
     if ([_delegate respondsToSelector:@selector(pictureView:defaultImageForIndex:)]) {
         view.placeholderImage = [_delegate pictureView:self defaultImageForIndex:index];
     }
-    
-    view.urlString = [_delegate pictureView:self highQualityUrlStringForIndex:index];
-    view.imageName = [_delegate pictureView:self localImageAtIndex:index];
+    if ([_delegate respondsToSelector:@selector(pictureView:highQualityUrlStringAtIndex:)]) {
+        view.urlString = [_delegate pictureView:self highQualityUrlStringAtIndex:index];
+    }
+    if ([_delegate respondsToSelector:@selector(pictureView:localImageNameAtIndex:)]) {
+        view.imageName = [_delegate pictureView:self localImageNameAtIndex:index];
+    }
     CGPoint center = view.center;
     center.x = index * _scrollView.frame.size.width + _scrollView.frame.size.width * 0.5;
     view.center = center;

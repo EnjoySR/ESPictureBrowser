@@ -95,14 +95,20 @@
 - (void)imageClick:(ASNetworkImageNode *)imageNode {
     ESPictureBrowser *browser = [[ESPictureBrowser alloc] init];
     [browser setDelegate:self];
-    [browser setLongPressBlock:^(NSInteger index) {
-        NSLog(@"%zd", index);
-    }];
     [browser showFromView:imageNode.view picturesCount:self.pictureModels.count currentPictureIndex:[self.pictureImageNodes indexOfObject:imageNode]];
 }
 
 #pragma mark - ESPictureBrowserDelegate
+/**
+ 获取长按手势事件
+ 
+ @param pictureBrowser 图片浏览器
+ @param index          索引
 
+ */
+- (void)pictureView:(ESPictureBrowser *)pictureBrowser longPressAtIndex:(NSInteger)index {
+    NSLog(@"%ld", (long)index);
+}
 
 /**
  获取对应索引的视图
@@ -158,7 +164,7 @@
  
  @return 图片的 url 字符串
  */
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index {
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringAtIndex:(NSInteger)index {
     ESPictureModel *model = self.pictureModels[index];
     return model.picUrl;
 }

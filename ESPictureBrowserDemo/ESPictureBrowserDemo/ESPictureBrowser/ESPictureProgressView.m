@@ -78,12 +78,6 @@
     [self updateProgressLayer];
 }
 
-- (void)hide {
-    self.circleLayer.hidden = true;
-    self.errorLayer.hidden = true;
-    self.fanshapedLayer.hidden = true;
-}
-
 - (void)showError {
     self.errorLayer.hidden = false;
     self.fanshapedLayer.hidden = true;

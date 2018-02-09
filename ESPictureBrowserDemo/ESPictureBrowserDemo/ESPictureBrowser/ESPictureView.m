@@ -72,10 +72,12 @@
     [self addSubview:imageView];
     
     // 添加进度view
-    ESPictureProgressView *progressView = [[ESPictureProgressView alloc] init];
-    [self addSubview:progressView];
-    self.progressView = progressView;
-    
+    if (_urlString) {
+        ESPictureProgressView *progressView = [[ESPictureProgressView alloc] init];
+        [self addSubview:progressView];
+        self.progressView = progressView;
+    }
+
     // 添加监听事件
     UITapGestureRecognizer *doubleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleClick:)];
     doubleTapGes.numberOfTapsRequired = 2;
@@ -146,7 +148,6 @@
         return;
     }
     _imageName = imageName;
-    [self.progressView hide];
     self.userInteractionEnabled = true;
     YYImage *image = [YYImage imageNamed:imageName];
     [self setPictureSize:image.size];

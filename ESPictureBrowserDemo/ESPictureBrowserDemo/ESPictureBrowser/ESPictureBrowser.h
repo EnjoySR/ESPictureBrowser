@@ -25,10 +25,10 @@
 @class ESPictureBrowser;
 @protocol ESPictureBrowserDelegate <NSObject>
 
-@required
+@optional
 
 /**
- 如果加载网络图片, 实现这个方法 下面方法返回 nil
+ 如果加载网络图片, 实现这个方法
  获取对应索引的高质量图片地址字符串
  
  @param pictureBrowser 图片浏览器
@@ -36,11 +36,11 @@
  
  @return 图片的 url 字符串
  */
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringAtIndex:(NSInteger)index;
 
 
 /**
- 如果加载本地图片, 实现这个方法 上面方法返回 nil
+ 如果加载本地图片, 实现这个方法
  获取对应索引的高质量图片地址字符串
  
  @param pictureBrowser 图片浏览器
@@ -48,9 +48,7 @@
  
  @return 本地图片名
  */
-- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser localImageAtIndex:(NSInteger)index;
-
-@optional
+- (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser localImageNameAtIndex:(NSInteger)index;
 
 /**
  获取对应索引的视图
@@ -92,6 +90,13 @@
  */
 - (void)pictureView:(ESPictureBrowser *)pictureBrowser scrollToIndex:(NSInteger)index;
 
+/**
+ 长按会调用此方法
+ @param pictureBrowser 图片浏览器
+ @param index          索引
+ */
+- (void)pictureView:(ESPictureBrowser *)pictureBrowser longPressAtIndex:(NSInteger)index;
+
 @end
 
 @interface ESPictureBrowser : UIView
@@ -117,11 +122,6 @@
  页数文字颜色，默认：白色
  */
 @property (nonatomic, strong) UIColor *pageTextColor;
-
-/**
- 长按图片要执行的事件，将长按图片索引回调
- */
-@property (nonatomic, copy) void(^longPressBlock)(NSInteger);
 
 /**
  显示图片浏览器
