@@ -112,6 +112,11 @@
     NSString *errorStr = [NSString stringWithFormat:@"Parameter is not correct, pictureCount is %zd, currentPictureIndex is %zd", picturesCount, currentPictureIndex];
     NSAssert(picturesCount > 0 && currentPictureIndex < picturesCount, errorStr);
     NSAssert(self.delegate != nil, @"Please set up delegate for pictureBrowser");
+    // 点击第一个图片时，不走scroll的delegate方法，要在这控制
+    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
+        _fromView = [_delegate pictureView:self viewForIndex:currentPictureIndex];
+        _fromView.alpha = 0;
+    }
     // 记录值并设置位置
     _currentPage = currentPictureIndex;
     self.picturesCount = picturesCount;

@@ -86,7 +86,7 @@
 
 #pragma mark - 外部方法
 
-- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void (^)())animationBlock completionBlock:(void (^)())completionBlock {
+- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)())completionBlock {
     _imageView.frame = rect;
     self.showAnim = true;
     [self.progressView setHidden:true];
@@ -105,7 +105,7 @@
     }];
 }
 
-- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void (^)())animationBlock completionBlock:(void (^)())completionBlock {
+- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)())completionBlock {
     
     // 隐藏进度视图
     self.progressView.hidden = true;

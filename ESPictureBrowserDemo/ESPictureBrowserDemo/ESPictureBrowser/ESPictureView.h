@@ -58,7 +58,7 @@
  @param animationBlock  附带的动画信息
  @param completionBlock 结束的回调
  */
-- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void(^)())animationBlock completionBlock:(void(^)())completionBlock;
+- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void(^)(void))animationBlock completionBlock:(void(^)(void))completionBlock;
 
 
 /**
@@ -68,6 +68,6 @@
  @param animationBlock  附带的动画信息
  @param completionBlock 结束的回调
  */
-- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void(^)())animationBlock completionBlock:(void(^)())completionBlock;
+- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void(^)(void))animationBlock completionBlock:(void(^)(void))completionBlock;
 
 @end
