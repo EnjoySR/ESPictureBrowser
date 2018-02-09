@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 #import <YYImage/YYAnimatedImageView.h>
-
+#import "ESPictureProgressView.h"
 
 @class ESPictureView;
 @protocol ESPictureViewDelegate <NSObject>
@@ -50,7 +50,8 @@
 @property (nonatomic, strong, readonly) UIImageView *imageView;
 // 代理
 @property (nonatomic, weak) id<ESPictureViewDelegate> pictureDelegate;
-
+// progress
+@property (nonatomic, weak) ESPictureProgressView *progressView;
 /**
  动画显示
 

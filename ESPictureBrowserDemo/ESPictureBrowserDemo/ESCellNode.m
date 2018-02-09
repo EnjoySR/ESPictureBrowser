@@ -170,7 +170,7 @@
 }
 
 - (void)pictureView:(ESPictureBrowser *)pictureBrowser scrollToIndex:(NSInteger)index {
-    NSLog(@"%ld", index);
+//    NSLog(@"%ld", index);
 }
 
 @end

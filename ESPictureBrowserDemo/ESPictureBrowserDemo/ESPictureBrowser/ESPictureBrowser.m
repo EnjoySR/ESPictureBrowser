@@ -305,6 +305,7 @@
     }
     if ([_delegate respondsToSelector:@selector(pictureView:localImageNameAtIndex:)]) {
         view.imageName = [_delegate pictureView:self localImageNameAtIndex:index];
+        [view.progressView removeFromSuperview];
     }
     CGPoint center = view.center;
     center.x = index * _scrollView.frame.size.width + _scrollView.frame.size.width * 0.5;

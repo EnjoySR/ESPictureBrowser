@@ -22,7 +22,6 @@
 // SOFTWARE.
 
 #import "ESPictureView.h"
-#import "ESPictureProgressView.h"
 #import <YYWebImage/YYWebImage.h>
 
 @interface ESPictureView()<UIScrollViewDelegate>
@@ -36,8 +35,6 @@
 @property (nonatomic, assign) CGFloat scale;
 
 @property (nonatomic, assign) CGFloat offsetY;
-
-@property (nonatomic, weak) ESPictureProgressView *progressView;
 
 @property (nonatomic, assign, getter=isShowAnim) BOOL showAnim;
 
@@ -71,12 +68,10 @@
     _imageView = imageView;
     [self addSubview:imageView];
     
-    // 添加进度view
-    if (_urlString) {
-        ESPictureProgressView *progressView = [[ESPictureProgressView alloc] init];
-        [self addSubview:progressView];
-        self.progressView = progressView;
-    }
+    ESPictureProgressView *progressView = [[ESPictureProgressView alloc] init];
+    [self addSubview:progressView];
+    self.progressView = progressView;
+    
 
     // 添加监听事件
     UITapGestureRecognizer *doubleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleClick:)];
@@ -86,7 +81,7 @@
 
 #pragma mark - 外部方法
 
-- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)())completionBlock {
+- (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)(void))completionBlock {
     _imageView.frame = rect;
     self.showAnim = true;
     [self.progressView setHidden:true];
@@ -105,7 +100,7 @@
     }];
 }
 
-- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)())completionBlock {
+- (void)animationDismissWithToRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)(void))completionBlock {
     
     // 隐藏进度视图
     self.progressView.hidden = true;
