@@ -84,7 +84,6 @@
 - (void)animationShowWithFromRect:(CGRect)rect animationBlock:(void (^)(void))animationBlock completionBlock:(void (^)(void))completionBlock {
     _imageView.frame = rect;
     self.showAnim = true;
-    [self.progressView setHidden:true];
     [UIView animateWithDuration:0.25 animations:^{
         if (animationBlock != nil) {
             animationBlock();
@@ -155,9 +154,13 @@
     }
     _urlString = urlString;
     [self.imageView yy_cancelCurrentImageRequest];
+    self.progressView.hidden = true;
     self.progressView.progress = 0.01;
+    YYWebImageManager *manager = [YYWebImageManager sharedManager];
+    NSString *key = [manager cacheKeyForURL:[NSURL URLWithString:_urlString]];
+    NSData *data = [manager.cache getImageDataForKey:key];
     // 如果没有在执行动画，那么就显示出来
-    if (self.isShowAnim == false) {
+    if (self.isShowAnim == false && !data) {
         // 显示出来
         self.progressView.hidden = false;
     }
@@ -167,13 +170,13 @@
         CGFloat progress = (CGFloat)receivedSize / expectedSize ;
         self.progressView.progress = progress;
     } transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-        if (error != nil) {
+        if (error) {
             [self.progressView showError];
         }else {
             if (stage == YYWebImageStageFinished) {
                 self.progressView.hidden = true;
                 self.userInteractionEnabled = true;
-                if (image != nil) {
+                if (image) {
                     // 计算图片的大小
                     [self setPictureSize:image.size];
                 }else {

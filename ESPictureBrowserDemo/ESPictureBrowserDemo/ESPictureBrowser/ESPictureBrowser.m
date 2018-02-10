@@ -128,7 +128,7 @@
     // 滚动到指定位置
     [self.scrollView setContentOffset:CGPointMake(currentPictureIndex * _scrollView.frame.size.width, 0) animated:false];
     // 设置第1个 view 的位置以及大小
-    ESPictureView *pictureView = [self setPictureViewForIndex:currentPictureIndex fromView: fromView];
+    ESPictureView *pictureView = [self setPictureViewForIndex:currentPictureIndex fromView:fromView];
     // 获取来源图片在屏幕上的位置
     CGRect rect = [fromView convertRect:fromView.bounds toView:nil];
     
@@ -298,14 +298,21 @@
     
     // 设置占位图
     if ([_delegate respondsToSelector:@selector(pictureView:defaultImageForIndex:)]) {
-        view.placeholderImage = [_delegate pictureView:self defaultImageForIndex:index];
+        UIImage *image = [_delegate pictureView:self defaultImageForIndex:index];
+        if (!image) {
+            [self setPlaceholderImageWithESPictureView:view andIndex:index];
+        }else {
+            view.placeholderImage = image;
+        }
+
+    }else {
+        [self setPlaceholderImageWithESPictureView:view andIndex:index];
     }
     if ([_delegate respondsToSelector:@selector(pictureView:highQualityUrlStringAtIndex:)]) {
         view.urlString = [_delegate pictureView:self highQualityUrlStringAtIndex:index];
     }
     if ([_delegate respondsToSelector:@selector(pictureView:localImageNameAtIndex:)]) {
         view.imageName = [_delegate pictureView:self localImageNameAtIndex:index];
-        [view.progressView removeFromSuperview];
     }
     CGPoint center = view.center;
     center.x = index * _scrollView.frame.size.width + _scrollView.frame.size.width * 0.5;
@@ -313,6 +320,15 @@
     return view;
 }
 
+- (void)setPlaceholderImageWithESPictureView:(ESPictureView *)view andIndex:(NSInteger)index {
+    if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
+        UIView *v = [_delegate pictureView:self viewForIndex:index];
+        if ([v isKindOfClass:[UIImageView class]]) {
+            UIImage *image = ((UIImageView *)v).image;
+            view.placeholderImage = image;
+        }
+    }
+}
 
 /**
  获取图片控件：如果缓存里面有，那就从缓存里面取，没有就创建
