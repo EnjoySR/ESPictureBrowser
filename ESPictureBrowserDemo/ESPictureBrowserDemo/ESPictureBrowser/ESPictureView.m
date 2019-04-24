@@ -62,6 +62,12 @@
     self.showsVerticalScrollIndicator = false;
     self.maximumZoomScale = 2;
     
+    // 解决在iOS11以上会造成的内容与SafeArea冲突导致被下移了20(非全面屏)或者64(全面屏)的问题 LH20190423
+    if(@available(iOS 11.0, *))
+        if ([self respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+    
     // 添加 imageView
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] init];
     imageView.clipsToBounds = true;

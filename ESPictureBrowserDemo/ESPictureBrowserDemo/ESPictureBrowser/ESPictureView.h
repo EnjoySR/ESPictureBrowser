@@ -21,6 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+// 本程序会在iOS11以上的版本上发生内容下移20(非全面屏)或者64(全面屏)的问题,解决方案参照:
+//  https://www.jianshu.com/p/efbc8619d56b
+
 #import <UIKit/UIKit.h>
 #import <YYImage/YYAnimatedImageView.h>
 
