@@ -41,6 +41,8 @@
 @property (nonatomic, weak) UILabel *pageTextLabel;
 /// 消失的 tap 手势
 @property (nonatomic, weak) UITapGestureRecognizer *dismissTapGes;
+/// 唤起照片浏览器前的keywindow的层级,用于隐藏状态栏
+@property(nonatomic, assign) CGFloat windowLevelBeforeBrowserShown;
 
 
 @end
@@ -107,6 +109,15 @@
     [self setPageText:currentPictureIndex];
     // 添加到 window 上
     [[UIApplication sharedApplication].keyWindow addSubview:self];
+    // 隐藏状态栏
+    if([_delegate respondsToSelector:@selector(pictureViewShouldAllowHideStatusBar:)])
+    {
+        if([_delegate pictureViewShouldAllowHideStatusBar:self])
+        {
+            self.windowLevelBeforeBrowserShown = [UIApplication sharedApplication].keyWindow.windowLevel;
+            [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelAlert;
+        }
+    }
     // 计算 scrollView 的 contentSize
     self.scrollView.contentSize = CGSizeMake(picturesCount * _scrollView.frame.size.width, _scrollView.frame.size.height);
     // 滚动到指定位置
@@ -163,6 +174,10 @@
         self.backgroundColor = [UIColor clearColor];
         self.pageTextLabel.alpha = 0;
     } completionBlock:^{
+        // 恢复状态栏
+        if([self.delegate respondsToSelector:@selector(pictureViewShouldAllowHideStatusBar:)]
+           && [self.delegate pictureViewShouldAllowHideStatusBar:self])
+            [UIApplication sharedApplication].keyWindow.windowLevel = self.windowLevelBeforeBrowserShown;
         [self removeFromSuperview];
     }];
 }

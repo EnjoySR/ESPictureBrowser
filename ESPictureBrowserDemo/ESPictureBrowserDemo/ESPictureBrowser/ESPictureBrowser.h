@@ -38,6 +38,13 @@
 - (NSString *)pictureView:(ESPictureBrowser *)pictureBrowser highQualityUrlStringForIndex:(NSInteger)index;
 
 @optional
+/**
+ 是否允许在打开图片浏览器时隐藏状态栏
+ 
+ @param pictureBrowser 图片浏览器
+ @return 是否允许的布尔值
+ */
+-(BOOL)pictureViewShouldAllowHideStatusBar:(ESPictureBrowser *)pictureBrowser;
 
 /**
  获取对应索引的视图
