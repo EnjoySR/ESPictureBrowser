@@ -83,6 +83,12 @@
 
 @interface ESPictureBrowser : UIView
 
+/**
+ 页面标题
+ 默认和pageText 一样尺寸，字号大小，字体颜色
+ */
+@property (nonatomic, strong) UILabel *titleLab;
+
 @property (nonatomic, weak) id<ESPictureBrowserDelegate> delegate;
 
 /**

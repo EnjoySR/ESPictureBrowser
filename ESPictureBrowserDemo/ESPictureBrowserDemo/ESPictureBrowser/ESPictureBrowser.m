@@ -86,7 +86,15 @@
     label.font = self.pageTextFont;
     [self addSubview:label];
     self.pageTextLabel = label;
-    
+
+    self.titleLab = [[UILabel alloc] init];
+    [self addSubview:_titleLab];
+    _titleLab.frame = CGRectMake(0, 20, self.frame.size.width, 20);
+    _titleLab.alpha = 0;
+    _titleLab.textColor = self.pageTextColor;
+    _titleLab.textAlignment = NSTextAlignmentCenter;
+    _titleLab.font = self.pageTextFont;
+
     // 添加手势事件
     UILongPressGestureRecognizer *longGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [self addGestureRecognizer:longGes];
@@ -119,6 +127,7 @@
     [pictureView animationShowWithFromRect:rect animationBlock:^{
         self.backgroundColor = [UIColor blackColor];
         self.pageTextLabel.alpha = 1;
+        self.titleLab.alpha = 1;
     } completionBlock:^{
         // 设置左边与右边的 pictureView
         if (currentPictureIndex != 0 && picturesCount > 1) {
@@ -162,6 +171,7 @@
     [pictureView animationDismissWithToRect:rect animationBlock:^{
         self.backgroundColor = [UIColor clearColor];
         self.pageTextLabel.alpha = 0;
+        self.titleLab.alpha = 1;
     } completionBlock:^{
         [self removeFromSuperview];
     }];
